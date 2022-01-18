@@ -5,7 +5,13 @@
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
-    <span class="toggleAside" @click="toggleAside"></span>
+
+    <svg class="icon toggleAside"
+         @click="toggleAside"
+         aria-hidden="true">
+      <use xlink:href="#icon-menu2"/>
+    </svg>
+
   </div>
 </template>
 
@@ -34,6 +40,13 @@ export default {
   justify-content: center;
   align-items: center;
 
+  .icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+
   > .logo {
     max-width: 6em;
     margin-right: auto;
@@ -51,14 +64,14 @@ export default {
 
   > .toggleAside {
     display: none;
-    width: 24px;
-    height: 24px;
-    background: red;
+    width: 20px;
+    height: 20px;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
   }
+
 
   @media (max-width: 500px) {
     > .menu {display: none}
