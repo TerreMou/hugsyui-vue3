@@ -9,10 +9,11 @@
 </template>
 
 <script lang="ts">
-import TopNav from '../components/TopNav.vue'
+import TopNav from "../components/TopNav.vue";
+
 export default {
   components: {TopNav}
-}
+};
 </script>
 
 <style lang="scss" scoped>
