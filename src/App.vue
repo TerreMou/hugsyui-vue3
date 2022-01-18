@@ -1,15 +1,14 @@
 <template>
-  <div>hi</div>
-  <Terre/>
+  <div>导航栏 |
+    <router-link to="/">Terre</router-link> |
+    <router-link to="/xxx">Terre2</router-link>
+  </div>
+  <hr/>
+  <router-view/>
 </template>
 
 <script>
-import Terre from './components/Terre.vue'
-
 export default {
   name: 'App',
-  components: {
-    Terre
-  }
 }
 </script>
