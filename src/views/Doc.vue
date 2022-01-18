@@ -9,10 +9,10 @@
             <router-link to="/doc/switch">Switch 开关</router-link>
           </li>
           <li>
-            <router-link to="/doc/button">Button 按钮 </router-link>
+            <router-link to="/doc/button">Button 按钮</router-link>
           </li>
           <li>
-            <router-link to="/doc/dialog">Dialog 对话框 </router-link>
+            <router-link to="/doc/dialog">Dialog 对话框</router-link>
           </li>
           <li>
             <router-link to="/doc/tabs">Tabs 标签页</router-link>
@@ -33,5 +33,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+aside {
+  background: lightblue;
+  width: 150px;
+  padding: 70px 16px 16px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
 
+  > h2 {
+    margin-bottom: 4px;
+  }
+
+  > ol {
+    > li {
+      padding: 4px 0;
+    }
+  }
+}
 </style>
