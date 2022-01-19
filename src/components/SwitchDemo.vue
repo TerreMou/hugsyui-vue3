@@ -5,9 +5,10 @@
 <script>
 import Switch from '../lib/Switch.vue';
 import {ref} from 'vue';
+import Button from '../lib/Button.vue';
 
 export default {
-  components: {Switch},
+  components: {Button, Switch},
   setup() {
     const bool = ref(false);
     return {bool};

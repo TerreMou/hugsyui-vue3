@@ -1,20 +1,26 @@
 <template>
-  <div class="hugsy-dialog-overlay"/>
-  <div class="hugsy-dialog-wrapper">
-    <div class="hugsy-dialog">
-      <header>标题 <span class="hugsy-dialog-close"/></header>
-      <main>
-        <p>细草微风岸，危樯独夜舟。</p>
-        <p>星垂平野阔，月涌大江流。</p>
-        <p>名岂文章著，官应老病休。</p>
-        <p>飘飘何所似，天地一沙鸥。</p>
-      </main>
-      <footer>
-        <Button>取消</Button>
-        <Button level="primary">确认</Button>
-      </footer>
+  <template v-if="visible">
+    <div class="hugsy-dialog-overlay" @click="onClickOverlay"/>
+    <div class="hugsy-dialog-wrapper">
+      <div class="hugsy-dialog">
+        <header>
+          标题
+          <span class="hugsy-dialog-close"
+                @click="close"/>
+        </header>
+        <main>
+          <p>细草微风岸，危樯独夜舟。</p>
+          <p>星垂平野阔，月涌大江流。</p>
+          <p>名岂文章著，官应老病休。</p>
+          <p>飘飘何所似，天地一沙鸥。</p>
+        </main>
+        <footer>
+          <Button @click="onCancel">取消</Button>
+          <Button @click="onOk" level="primary">确认</Button>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 
 <script lang="ts">
@@ -23,9 +29,37 @@ import Button from "./Button.vue";
 export default {
   components: {Button},
   props: {
-    visible: Boolean,
-    title: String,
+    visible: {
+      type: Boolean,
+      default: false
+    },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true
+    },
+    ok: Function,
+    cancel: Function,
   },
+  setup(props, context) {
+    const close = () => {
+      context.emit("update:visible", !props.visible);
+    };
+    const onClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close();
+      }
+    };
+    const onCancel = () => {
+      context.emit('cancel')
+      close()
+    };
+    const onOk = () => {
+      if (props.ok && props.ok() !== false) {
+        close()
+      }
+    };
+    return {close, onClickOverlay, onCancel, onOk};
+  }
 };
 </script>
 
