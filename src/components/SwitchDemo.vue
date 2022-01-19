@@ -1,7 +1,4 @@
 <template>
-<!--  <h2>Switch 开关</h2>-->
-<!--  <hr/>-->
-<!--  <h3>常规</h3>-->
   <Switch v-model:checkedValue="bool"/>
 </template>
 
