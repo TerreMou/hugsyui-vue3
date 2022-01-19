@@ -1,19 +1,20 @@
 <template>
-  <div>
-    <button v-bind="$attrs">
-      <slot/>
-    </button>
-  </div>
+  <button class="hugsy-button" :class="{[`theme-${theme}`]: theme}">
+    <slot/>
+  </button>
 </template>
 
 <script lang="ts">
 export default {
-  inheritAttrs: false,
+  props: {
+    theme: {
+      type: String,
+      default: "default"
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-div {
-  border: 1px solid red;
-}
+
 </style>
