@@ -64,7 +64,7 @@ export default {
 
   > aside {
     flex-shrink: 0;
-    background: #54a175;
+    background: #dbdad9;
     width: 150px;
     position: fixed;
     top: 0;
