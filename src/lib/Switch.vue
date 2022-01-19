@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-$color-on: #409eff;
+$color-on: #88a3c1;
 $color-off: #dcdfe6;
 $h: 22px;
 $h2: $h - 4px;

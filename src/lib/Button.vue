@@ -47,9 +47,9 @@ export default {
 </script>
 
 <style lang="scss">
-$color-border: #dcdfe6;
-$color-button: #409eff;
-$red: red;
+$color-border: #d9d9d9;
+$color-button: #88a3c1;
+$red: #c70024;
 $grey: grey;
 $box-shadow: 0 1px 0 fade-out(black, 0.95);
 $h: 32px;

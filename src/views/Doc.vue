@@ -40,6 +40,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$color-aside: #c8d0d8;
+$color-main: white;
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -64,7 +67,7 @@ export default {
 
   > aside {
     flex-shrink: 0;
-    background: #dbdad9;
+    background: $color-aside;
     width: 150px;
     position: fixed;
     top: 0;
@@ -87,7 +90,7 @@ export default {
     overflow: auto;
     flex-grow: 1;
     padding: 16px;
-    background: white;
+    background: $color-main;
   }
 }
 </style>
