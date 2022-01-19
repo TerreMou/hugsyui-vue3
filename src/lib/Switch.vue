@@ -8,9 +8,9 @@ export default {
   props: {
     checkedValue: Boolean
   },
-  setup(props,context) {
+  setup(props, context) {
     const toggle = () => {
-      context.emit('update:checkedValue', !props.checkedValue)
+      context.emit("update:checkedValue", !props.checkedValue);
     };
     return {toggle};
   }
@@ -39,20 +39,29 @@ button {
     position: absolute;
     top: 2px;
     left: 2px;
-    transition: left 250ms;
+    transition: all 250ms;
+  }
+
+  &.checked {
+    background: $color-on;
+
+    > span {
+      left: calc(100% - #{$h2} - 2px)
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    > span {
+      width: $h2 + 4px;
+    }
+  }
+
+  &.checked:active {
+    > span {width: $h2 + 4px; margin-left: -4px;}
   }
 }
-
-button.checked {
-  background: $color-on;
-
-  > span {
-    left: calc(100% - #{$h2} - 2px)
-  }
-}
-
-button:focus {
-  outline: none;
-}
-
 </style>

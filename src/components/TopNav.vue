@@ -37,7 +37,7 @@ export default {
   left: 0;
   width: 100%;
   z-index: 10;
-  background: pink;
+  background: #716fb1;
   display: flex;
   padding: 16px;
   justify-content: center;

@@ -64,7 +64,7 @@ export default {
 
   > aside {
     flex-shrink: 0;
-    background: lightblue;
+    background: #54a175;
     width: 150px;
     position: fixed;
     top: 0;
@@ -87,7 +87,7 @@ export default {
     overflow: auto;
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+    background: white;
   }
 }
 </style>
