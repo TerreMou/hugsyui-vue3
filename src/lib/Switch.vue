@@ -1,5 +1,6 @@
 <template>
-  <button :class=" {checked: checkedValue} " @click="toggle"><span/></button>
+  <button class="hugsy-switch" :class=" {'hugsy-checked': checkedValue} "
+          @click="toggle"><span/></button>
 </template>
 
 <script lang="ts">
@@ -17,12 +18,12 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "../helper.scss";
-
+<style lang="scss">
+$color-on: #409eff;
+$color-off: #dcdfe6;
 $h: 22px;
 $h2: $h - 4px;
-button {
+.hugsy-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -42,7 +43,7 @@ button {
     transition: all 250ms;
   }
 
-  &.checked {
+  &.hugsy-checked {
     background: $color-on;
 
     > span {
@@ -60,7 +61,7 @@ button {
     }
   }
 
-  &.checked:active {
+  &.hugsy-checked:active {
     > span {width: $h2 + 4px; margin-left: -4px;}
   }
 }
