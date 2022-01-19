@@ -1,9 +1,9 @@
 <template>
-  <Button>
-    Default Button
-  </Button>
   <Button theme="primary">
     Primary Button
+  </Button>
+  <Button>
+    Default Button
   </Button>
   <Button theme="dashed">
     Dashed Button
@@ -18,6 +18,7 @@
 
 <script>
 import Button from '../lib/Button.vue';
+
 export default {
   components: {Button},
   setup() {

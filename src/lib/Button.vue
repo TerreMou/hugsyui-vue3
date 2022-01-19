@@ -36,6 +36,7 @@ $radius: 4px;
   border: 1px solid $color-border;
   border-radius: $radius;
   box-shadow: $box-shadow;
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
 
   & + & {
     margin-left: 8px;
@@ -54,7 +55,35 @@ $radius: 4px;
     border: 0;
   }
 
-}
+  &.hugsy-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $color-button;
 
+    &:hover, &:focus {
+      color: lighten($color-button, 10%);
+    }
+  }
+
+  &.hugsy-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+
+    &:hover, &:focus {
+      background: darken(white, 5%);;
+    }
+  }
+
+  &.hugsy-theme-dashed {
+    border-style: dashed;
+  }
+
+  &.hugsy-theme-primary {
+    background-color: $color-button;
+    color: white;
+  }
+
+}
 
 </style>
