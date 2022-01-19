@@ -70,6 +70,7 @@ $radius: 4px;
   border-radius: $radius;
   box-shadow: $box-shadow;
   transition: background 300ms;
+  text-align: center;
 
   & + & {
     margin-left: 8px;
