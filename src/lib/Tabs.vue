@@ -4,7 +4,7 @@
     <div class="hugsy-tabs-nav" ref="container">
       <div class="hugsy-tabs-nav-item" :class="{selected: title===selected}"
            v-for="(title,index) in titles" :key="index"
-           :ref="el => {if (el) navItem[index]=el}"
+           :ref="el => {if (title === selected) currentTab = el}"
            @click="select(title)">{{ title }}
       </div>
       <div class="hugsy-tabs-nav-indicator" ref="indicator"/>
@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import Tab from "./Tab.vue";
-import {computed, onMounted, onUpdated, ref} from "vue";
+import {computed, onMounted, ref, watchEffect} from "vue";
 
 export default {
   props: {
@@ -29,22 +29,22 @@ export default {
     },
   },
   setup(props, context) {
-    const navItem = ref<HTMLDivElement[]>([]);
+    const currentTab = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
 
-    console.log(navItem.value);
-    const x = () => {
-      const currentTab = navItem.value.filter(div => div.classList.contains("selected"))[0];
-      const {width: tabWidth} = currentTab.getBoundingClientRect();
-      indicator.value.style.width = tabWidth + "px";
-      const {left: left1} = container.value.getBoundingClientRect();
-      const {left: left2} = currentTab.getBoundingClientRect();
-      const left = left2 - left1;
-      indicator.value.style.left = left + "px";
-    };
-    onMounted(x);
-    onUpdated(x);
+    onMounted(() => {
+      watchEffect(
+          () => {
+            const {width: tabWidth} = currentTab.value.getBoundingClientRect();
+            indicator.value.style.width = tabWidth + "px";
+            const {left: left1} = container.value.getBoundingClientRect();
+            const {left: left2} = currentTab.value.getBoundingClientRect();
+            const left = left2 - left1;
+            indicator.value.style.left = left + "px";
+          }
+      );
+    });
 
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
@@ -66,7 +66,7 @@ export default {
 
     return {
       defaults, titles, select, currentSelect,
-      navItem, container, indicator
+      currentTab, container, indicator
     };
   }
 };
