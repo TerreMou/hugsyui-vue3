@@ -1,22 +1,24 @@
 <template>
   <template v-if="visible">
-    <div class="hugsy-dialog-overlay" @click="onClickOverlay"/>
-    <div class="hugsy-dialog-wrapper">
-      <div class="hugsy-dialog">
-        <header>
-          <slot name="title" />
-          <span class="hugsy-dialog-close"
-                @click="close"/>
-        </header>
-        <main>
-         <slot name="content" />
-        </main>
-        <footer>
-          <Button @click="onCancel">取消</Button>
-          <Button @click="onOk" level="primary">确认</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="hugsy-dialog-overlay" @click="onClickOverlay"/>
+      <div class="hugsy-dialog-wrapper">
+        <div class="hugsy-dialog">
+          <header>
+            <slot name="title" />
+            <span class="hugsy-dialog-close"
+                  @click="close"/>
+          </header>
+          <main>
+            <slot name="content" />
+          </main>
+          <footer>
+            <Button @click="onCancel">取消</Button>
+            <Button @click="onOk" level="primary">确认</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
@@ -47,7 +49,7 @@ export default {
       }
     };
     const onCancel = () => {
-      context.emit('cancel')
+      props.cancel && props.cancel()
       close()
     };
     const onOk = () => {
