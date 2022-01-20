@@ -2,7 +2,7 @@
   <h2>Tabs 切换</h2>
 
   <h3>示例一</h3>
-  <Tabs>
+  <Tabs v-model:selected="tab">
     <Tab title="导航1">内容1</Tab>
     <Tab title="导航2">内容2</Tab>
   </Tabs>
@@ -11,8 +11,13 @@
 <script lang="ts">
 import Tabs from "../lib/Tabs.vue";
 import Tab from "../lib/Tab.vue";
+import {ref} from "vue";
 
 export default {
   components: {Tabs, Tab},
+  setup() {
+    const tab = ref("导航1");
+    return {tab};
+  }
 };
 </script>
