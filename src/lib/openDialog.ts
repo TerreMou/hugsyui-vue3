@@ -1,6 +1,7 @@
 import {createApp, h} from "vue";
 import Dialog from "./Dialog.vue";
 
+// 动态挂载组件
 const openDialog = (options) => {
   const {closeOnClickOverlay, title, content, ok, cancel} = options;
   const div = document.createElement("div");
