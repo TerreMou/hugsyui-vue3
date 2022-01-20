@@ -4,15 +4,12 @@
     <div class="hugsy-dialog-wrapper">
       <div class="hugsy-dialog">
         <header>
-          标题
+          <slot name="title" />
           <span class="hugsy-dialog-close"
                 @click="close"/>
         </header>
         <main>
-          <p>细草微风岸，危樯独夜舟。</p>
-          <p>星垂平野阔，月涌大江流。</p>
-          <p>名岂文章著，官应老病休。</p>
-          <p>飘飘何所似，天地一沙鸥。</p>
+         <slot name="content" />
         </main>
         <footer>
           <Button @click="onCancel">取消</Button>
