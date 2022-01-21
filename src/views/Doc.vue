@@ -9,10 +9,10 @@
             <router-link to="/doc/intro">介绍</router-link>
           </li>
           <li>
-            <router-link to="/doc/install">安装</router-link>
+            <router-link to="/doc/install">如何安装</router-link>
           </li>
           <li>
-            <router-link to="/doc/getstarted">开始</router-link>
+            <router-link to="/doc/getstarted">快速开始</router-link>
           </li>
         </ol>
 
@@ -53,9 +53,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color-aside: white;
-$color-main: white;
-$font-color: #2a282a;
+$color-aside: #373737;
+$color-main: #c1b3a6;
+$font-color: #c1b3a6;
+$selected: #f65658;
 
 .layout {
   display: flex;
@@ -64,11 +65,16 @@ $font-color: #2a282a;
 
   > .nav {
     flex-shrink: 0;
+    background: none;
+    color: #2a282a;
+    @media (max-width: 500px) {
+      background: #373737;
+    }
   }
 
   > .content {
     flex-grow: 1;
-    padding-top: 67px;
+    padding-top: 60px;
     padding-left: 156px;
     @media (max-width: 500px) {
       padding-left: 0;
@@ -84,24 +90,49 @@ $font-color: #2a282a;
     background: $color-aside;
     width: 150px;
     position: fixed;
-    top: 67px;
+    top: 0;
     left: 0;
-    padding: 10px 16px 16px 16px;
+    padding-top: 70px;
     height: 100%;
     color: $font-color;
 
     > h2 {
-      margin-bottom: 4px;
-      color: black;
+      padding: 0 16px;
     }
 
     > ol {
-      > li {
-        padding: 4px 0;
+      margin-bottom: 16px;
 
-        > a:hover {
-          border-bottom: 2px solid #f65658;
+      > li {
+        a {
+          display: block;
+          padding: 8px 20px;
+          position: relative;
+
+          &:hover::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: $selected;
+          }
         }
+
+        .router-link-active {
+
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: $selected;
+          }
+        }
+
       }
     }
   }
