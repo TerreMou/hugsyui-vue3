@@ -12,7 +12,7 @@
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>sdkfjslfdjsdlfsd</pre>
+        <pre>{{Switch1Demo.__sourceCode}}</pre>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>sdkfjslfdjsdlfsd</pre>
+        <pre>{{Switch2Demo.__sourceCode}}</pre>
       </div>
     </div>
 
@@ -33,14 +33,14 @@
 </template>
 
 <script>
-import Switch from '../lib/Switch.vue';
 import {ref} from 'vue';
 import Button from '../lib/Button.vue';
 import Switch1Demo from './code/Switch1.demo.vue';
 import Switch2Demo from './code/Switch2.demo.vue';
+console.log(Switch1Demo.__sourceCode)
 
 export default {
-  components: {Button, Switch},
+  components: {Button},
   setup() {
     const bool = ref(false);
     return {bool, Switch1Demo, Switch2Demo};
