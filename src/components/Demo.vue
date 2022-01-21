@@ -1,11 +1,12 @@
 <template>
   <div class="demo">
-    <h2>{{ component.__sourceCodeTitle }}</h2>
+    <h3>{{ component.__sourceCodeTitle }}</h3>
+    <p class="description">{{description}}</p>
     <div class="demo-component">
       <component :is="component"/>
     </div>
     <div class="demo-actions">
-      <Button @click="codeVisible=!codeVisible">查看代码</Button>
+      <Button size="small" theme="link" @click="codeVisible=!codeVisible">查看代码</Button>
     </div>
     <div class="demo-code" v-if="codeVisible">
       <pre class="language-html" v-html="rawCode"/>
@@ -16,13 +17,14 @@
 <script>
 import Button from '../lib/Button.vue';
 import Prism from 'prismjs';
-import 'prismjs/themes/prism.css';
+import 'prismjs/themes/prism-solarizedlight.css';
 import {computed, ref} from 'vue';
 
 export default {
   components: {Button},
   props: {
-    component: Object
+    component: Object,
+    description: String,
   },
   setup(props) {
     const codeVisible = ref(false);
@@ -35,16 +37,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$border-color: #d9d9d9;
+$border-color: #373737;
 
 .demo {
-  border: 1px solid $border-color;
   margin: 16px 0 32px;
 
-  > h2 {
+  > h3 {
     font-size: 20px;
     padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
+  }
+
+  > .description {
+    padding: 0 16px;
   }
 
   &-component {
@@ -52,8 +56,8 @@ $border-color: #d9d9d9;
   }
 
   &-actions {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
+    padding: 0 16px 16px 16px;
+    border-bottom: 1px dashed $border-color;
   }
 
   &-code {

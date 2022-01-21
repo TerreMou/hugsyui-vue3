@@ -1,4 +1,4 @@
-<demo>常规用法</demo>
+<demo>默认</demo>
 
 <template>
   <Switch v-model:checkedValue="bool"/>
