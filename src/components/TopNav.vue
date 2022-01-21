@@ -12,7 +12,7 @@
 
     <svg class="icon toggleAside"
          @click="toggleAside">
-      <use xlink:href="#icon-menu2"/>
+      <use xlink:href="#icon-menu"/>
     </svg>
 
   </div>
@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 $color: #c1b3a6;
-$bg:#373737;
+$bg: #373737;
 .topnav {
   color: $color;
   background: $bg;
@@ -52,6 +52,7 @@ $bg:#373737;
   > .logo {
     max-width: 6em;
     margin-right: auto;
+
     > svg {
       width: 32px;
       height: 32px;
@@ -76,6 +77,7 @@ $bg:#373737;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
   }
 
 
