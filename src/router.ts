@@ -5,11 +5,13 @@ import SwitchDemo from "./components/SwitchDemo.vue";
 import ButtonDemo from "./components/ButtonDemo.vue";
 import DialogDemo from "./components/DialogDemo.vue";
 import TabsDemo from "./components/TabsDemo.vue";
-import Intro from "./views/Intro.vue"
-import Install from "./views/Install.vue"
-import GetStarted from "./views/GetStarted.vue"
+import Markdown from "./components/Markdown.vue";
+import {h} from "vue";
 
 const history = createWebHashHistory();
+const md = (filename) =>
+  h(Markdown, {path: `../markdown/${filename}.md`, key: filename}); // 动态挂载组件时候记得加 key
+
 export const router = createRouter({
   history,
   routes: [
@@ -18,10 +20,10 @@ export const router = createRouter({
       path: "/doc",
       component: Doc,
       children: [
-        {path: "", redirect:"doc/intro"},
-        {path: "intro", component: Intro},
-        {path: "install", component: Install},
-        {path: "getstarted", component: GetStarted},
+        {path: "", redirect: "doc/intro"},
+        {path: "intro", component: md("intro")},
+        {path: "install", component: md("install")},
+        {path: "getstarted", component: md("get-started")},
         {path: "switch", component: SwitchDemo},
         {path: "button", component: ButtonDemo},
         {path: "dialog", component: DialogDemo},
