@@ -1,7 +1,7 @@
 <template>
   <button class="hugsy-button" :class="classes"
           :disabled="disabled">
-    <span v-if="loading" class="hugsy-loadingIndicator" />
+    <span v-if="loading" class="hugsy-loadingIndicator"/>
     <slot/>
   </button>
 </template>
@@ -47,10 +47,14 @@ export default {
 </script>
 
 <style lang="scss">
-$color-border: #d9d9d9;
-$color-button: #88a3c1;
-$red: #c70024;
-$grey: grey;
+$border: #d9d9d9;
+$theme: #c1b3a6;
+$primary: #373737;
+$link: #333;
+$red: #f65658;
+$disabled: grey;
+$default: white;
+$danger: red;
 $box-shadow: 0 1px 0 fade-out(black, 0.95);
 $h: 32px;
 $radius: 4px;
@@ -64,12 +68,12 @@ $radius: 4px;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
-  background: white;
+  background: $default;
   color: #333;
-  border: 1px solid $color-border;
+  border: 1px solid $border;
   border-radius: $radius;
   box-shadow: $box-shadow;
-  transition: background 300ms;
+  transition: background 250ms;
   text-align: center;
 
   & + & {
@@ -77,8 +81,8 @@ $radius: 4px;
   }
 
   &:hover, &:focus {
-    color: $color-button;
-    border-color: $color-button;
+    color: $theme;
+    border-color: $theme;
   }
 
   &:focus {
@@ -91,21 +95,23 @@ $radius: 4px;
 
   &.hugsy-theme-link {
     border-color: transparent;
+    background: transparent;
     box-shadow: none;
-    color: $color-button;
+    color: $link;
 
     &:hover, &:focus {
-      color: lighten($color-button, 10%);
+      background: darken($theme, 5%);
     }
   }
 
   &.hugsy-theme-text {
     border-color: transparent;
+    background: transparent;
     box-shadow: none;
     color: inherit;
 
     &:hover, &:focus {
-      background: darken(white, 5%);;
+      border-bottom: 2px solid $red;
     }
   }
 
@@ -127,53 +133,59 @@ $radius: 4px;
 
   &.hugsy-theme-default, &.hugsy-theme-dashed {
     &.hugsy-level-primary {
-      background: $color-button;
+      background: $primary;
       color: white;
-      border-color: $color-button;
+      border-color: $primary;
 
       &:hover,
       &:focus {
-        background: darken($color-button, 10%);
-        border-color: darken($color-button, 10%);
+        background: darken($primary, 15%);
+        border-color: darken($primary, 15%);
       }
     }
 
     &.hugsy-level-danger {
-      background: $red;
-      border-color: $red;
-      color: white;
+      background: $danger;
+      border-color: $danger;
+      color: #333;
 
       &:hover,
       &:focus {
-        background: darken($red, 10%);
-        border-color: darken($red, 10%);
+        background: darken($danger, 10%);
+        border-color: darken($danger, 10%);
       }
     }
   }
 
   &.hugsy-theme-link {
     &.hugsy-level-danger {
-      color: $red;
+      color: $danger;
+
       &:hover,
       &:focus {
-        color: darken($red, 10%);
+        color: darken($danger, 10%);
       }
     }
   }
 
   &.hugsy-theme-text {
     &.hugsy-level-primary {
-      color: $color-button;
+      color: $primary;
+      font-weight: bold;
+
       &:hover,
       &:focus {
-        color: darken($color-button, 10%);
+        color: darken($primary, 15%);
       }
     }
+
     &.hugsy-level-danger {
-      color: $red;
+      color: $danger;
+
       &:hover,
       &:focus {
-        color: darken($red, 10%);
+        color: darken($danger, 10%);
+        border-bottom: 2px solid darken($danger, 10%);
       }
     }
   }
@@ -181,25 +193,29 @@ $radius: 4px;
   &.hugsy-theme-default {
     &[disabled] {
       cursor: not-allowed;
-      color: $grey;
+      color: $disabled;
+
       &:hover {
-        border-color: $grey;
+        border-color: $disabled;
       }
     }
   }
+
   &.hugsy-theme-link, &.hugsy-theme-text {
     &[disabled] {
       cursor: not-allowed;
-      color: $grey;
+      color: $disabled;
+      border: none;
     }
   }
-  > .hugsy-loadingIndicator{
+
+  > .hugsy-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
     margin-right: 4px;
     border-radius: 8px;
-    border-color: $color-button $color-button $color-button transparent;
+    border-color: $primary $primary $primary transparent;
     border-style: solid;
     border-width: 2px;
     animation: hugsy-spin 1s infinite linear;
@@ -208,13 +224,13 @@ $radius: 4px;
   &.hugsy-level-primary {
     > .hugsy-loadingIndicator {
       border-color: white white white transparent;
-
     }
   }
 
 }
+
 @keyframes hugsy-spin {
-  0%{transform: rotate(0deg)}
-  100%{transform: rotate(360deg)}
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
 }
 </style>
