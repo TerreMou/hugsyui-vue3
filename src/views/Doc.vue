@@ -40,8 +40,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color-aside: #c8d0d8;
-$color-main: white;
+$color-aside: #c1b3a6;
+$color-main: #c1b3a6;
+$font-color: #2a282a;
 
 .layout {
   display: flex;
@@ -54,7 +55,7 @@ $color-main: white;
 
   > .content {
     flex-grow: 1;
-    padding-top: 60px;
+    padding-top: 67px;
     padding-left: 156px;
     @media (max-width: 500px) {
       padding-left: 0;
@@ -70,18 +71,24 @@ $color-main: white;
     background: $color-aside;
     width: 150px;
     position: fixed;
-    top: 0;
+    top: 67px;
     left: 0;
-    padding: 70px 16px 16px 16px;
+    padding: 10px 16px 16px 16px;
     height: 100%;
+    color: $font-color;
 
     > h2 {
       margin-bottom: 4px;
+      color: black;
     }
 
     > ol {
       > li {
         padding: 4px 0;
+
+        > a:hover {
+          border-bottom: 2px solid #f65658;
+        }
       }
     }
   }

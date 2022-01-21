@@ -1,14 +1,17 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <div class="logo">
+      <svg class="icon">
+        <use xlink:href="#icon-h1"/>
+      </svg>
+    </div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
 
     <svg class="icon toggleAside"
-         @click="toggleAside"
-         aria-hidden="true">
+         @click="toggleAside">
       <use xlink:href="#icon-menu2"/>
     </svg>
 
@@ -31,29 +34,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color-nav: #88a3c1;
+$color: #c1b3a6;
+$bg:#373737;
 .topnav {
+  color: $color;
+  background: $bg;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
-  background: $color-nav;
   display: flex;
   padding: 16px;
   justify-content: center;
   align-items: center;
 
-  .icon {
-    width: 1em; height: 1em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-  }
-
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    > svg {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   > .menu {
