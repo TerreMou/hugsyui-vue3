@@ -19,8 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
-$color-on: #88a3c1;
-$color-off: #dcdfe6;
+$color-on: #373737;
+$color-off: grey;
 $h: 22px;
 $h2: $h - 4px;
 .hugsy-switch {
@@ -64,5 +64,10 @@ $h2: $h - 4px;
   &.hugsy-checked:active {
     > span {width: $h2 + 4px; margin-left: -4px;}
   }
+
+  &[disabled] {
+   cursor: not-allowed;
+  }
+
 }
 </style>
