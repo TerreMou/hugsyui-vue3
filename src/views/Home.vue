@@ -11,15 +11,29 @@
     </div>
   </div>
   <div class="features">
-    <svg class="icon">
-      <use xlink:href="#icon-vue"/>
-    </svg>
-    <svg class="icon">
-      <use xlink:href="#icon-ts"/>
-    </svg>
-    <svg class="icon">
-      <use xlink:href="#icon-idea"/>
-    </svg>
+    <ul>
+      <li>
+        <svg class="icon">
+          <use xlink:href="#icon-vue"/>
+        </svg>
+        <h3>基于 Vue 3</h3>
+        <p>使用 Vue 3 Composition API</p>
+      </li>
+      <li>
+        <svg class="icon">
+          <use xlink:href="#icon-idea"/>
+        </svg>
+        <h3>代码轻量易读</h3>
+        <p>每个组件的源代码都很简洁</p>
+      </li>
+      <li>
+        <svg class="icon">
+          <use xlink:href="#icon-ts"/>
+        </svg>
+        <h3>基于 TypeScript</h3>
+        <p>源代码采用 TypeScript 书写（非严格检查）</p>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -42,13 +56,6 @@ $color: #c1b3a6;
 
   .topnav {
     background: none;
-    }
-}
-
-.features {
-  > svg {
-    width: 64px;
-    height: 64px;
   }
 }
 
@@ -75,4 +82,51 @@ $color: #c1b3a6;
     }
   }
 }
+
+.features {
+  margin: 64px auto;
+  width: 400px;
+
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      justify-content: start;
+      align-content: space-between;
+      width: 400px;
+      margin: 16px 0;
+      display: grid;
+      grid-template-areas:
+          "icon h3"
+          "icon text";
+      grid-template-columns: 80px auto;
+      grid-template-rows: 1fr auto;
+
+      > svg {
+        grid-area: icon;
+        width: 64px;
+        height: 64px;
+      }
+
+      > h3 {
+        grid-area: h3;
+        font-size: 24px;
+      }
+
+      > p {
+        grid-area: text;
+      }
+    }
+  }
+}
+
+
 </style>

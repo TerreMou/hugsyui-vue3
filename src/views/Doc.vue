@@ -40,8 +40,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color-aside: #c1b3a6;
-$color-main: #c1b3a6;
+$color-aside: white;
+$color-main: white;
 $font-color: #2a282a;
 
 .layout {
