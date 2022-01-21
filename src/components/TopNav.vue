@@ -7,7 +7,7 @@
     </router-link>
     <ul class="menu">
       <li>
-        <router-link to="/doc">文档</router-link>
+        <a href="#">GitHub</a>
       </li>
     </ul>
 

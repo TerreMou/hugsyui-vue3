@@ -5,8 +5,8 @@
       <h1>Hugsy UI</h1>
       <h2>一个轻量的 UI 框架</h2>
       <p class="actions">
-        <a href="#">GitHub</a>
-        <router-link to="/doc">开始</router-link>
+        <router-link to="/doc/intro">文档</router-link>
+        <router-link to="/doc/getstarted">开始</router-link>
       </p>
     </div>
   </div>
@@ -69,6 +69,7 @@ $color: #c1b3a6;
 
   > .actions {
     padding: 8px 0;
+    margin-top: 8px;
 
     a {
       margin: 0 8px;
@@ -86,6 +87,10 @@ $color: #c1b3a6;
 .features {
   margin: 64px auto;
   width: 400px;
+
+  @media (max-width: 450px) {
+    width: 300px;
+  }
 
   @media (min-width: 800px) {
     width: 800px;
@@ -118,7 +123,6 @@ $color: #c1b3a6;
 
       > h3 {
         grid-area: h3;
-        font-size: 24px;
       }
 
       > p {
@@ -127,6 +131,5 @@ $color: #c1b3a6;
     }
   }
 }
-
 
 </style>
