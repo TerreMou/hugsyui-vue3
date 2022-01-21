@@ -29,3 +29,14 @@ body {
   fill: currentColor;
   overflow: hidden;
 }
+
+$color: #373737;
+$main: #c1b3a6;
+$red: #ef5356;
+
+#mb {
+  background-color: $main;
+  a {
+    color: $red;
+  }
+}

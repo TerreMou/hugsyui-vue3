@@ -12,7 +12,7 @@
             <router-link to="/doc/install">如何安装</router-link>
           </li>
           <li>
-            <router-link to="/doc/getstarted">快速开始</router-link>
+            <router-link to="/doc/getstarted">开始使用</router-link>
           </li>
         </ol>
 
