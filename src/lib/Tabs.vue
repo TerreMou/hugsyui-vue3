@@ -73,12 +73,12 @@ export default {
 </script>
 
 <style lang="scss">
-$blue: #88a3c1;
-$color: #333;
-$border-color: #d9d9d9;
+$selected: #373737;
+$color: #373737;
+$line: #373737;
+$border-color: #c1b3a6;
 
 .hugsy-tabs {
-  border: 1px solid black;
 
   &-nav {
     display: flex;
@@ -89,7 +89,7 @@ $border-color: #d9d9d9;
     &-indicator {
       position: absolute;
       height: 3px;
-      background: $blue;
+      background: $line;
       left: 0;
       bottom: -1px;
       transition: all 300ms;
@@ -99,23 +99,20 @@ $border-color: #d9d9d9;
       padding: 8px 0;
       margin: 0 16px;
       cursor: pointer;
+      font-weight: bold;
 
       &:first-child {
         margin-left: 0;
       }
 
       &.selected {
-        color: $blue;
+        color: $selected;
       }
     }
   }
 
   &-content {
     padding: 8px 0;
-
-    &-item {
-
-    }
   }
 
 }

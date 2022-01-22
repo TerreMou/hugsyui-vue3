@@ -1,24 +1,26 @@
 <template>
-  <h2>Tabs 切换</h2>
-
-  <h3>示例一</h3>
-  <Tabs v-model:selected="tab">
-    <Tab title="导航1">内容1</Tab>
-    <Tab title="导航222222222">内容2</Tab>
-    <Tab title="导航33333">内容3</Tab>
-  </Tabs>
+  <div>
+    <Layout main-heading="Tabs 标签页"
+            main-description="This component can be used as an on-page navigation
+            offering with a rich variety of visual customizations and
+            usage flexibility."
+            sub-heading="示例">
+      <Demo :component="Tabs1Demo"
+            description="By default it’s displayed as a horizontal list
+            of tab items"/>
+    </Layout>
+  </div>
 </template>
 
-<script lang="ts">
-import Tabs from "../lib/Tabs.vue";
-import Tab from "../lib/Tab.vue";
-import {ref} from "vue";
+<script>
+import Tabs1Demo from './code/Tabs1.demo.vue';
+import Demo from './Demo.vue';
+import Layout from './Layout.vue';
 
 export default {
-  components: {Tabs, Tab},
+  components: {Layout, Demo},
   setup() {
-    const tab = ref("导航1");
-    return {tab};
+    return {Tabs1Demo};
   }
 };
 </script>
