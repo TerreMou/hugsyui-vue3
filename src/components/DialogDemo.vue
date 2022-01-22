@@ -1,60 +1,29 @@
 <template>
-  <h2>Dialog 对话框</h2>
-
-  <h3>示例一</h3>
-  <Button @click="toggle">对话框1</Button>
-  <Dialog v-model:visible="bool" :closeOnClickOverlay="false"
-          :cancel="f1" :ok="f2">
-    <template v-slot:title>
-      <strong>加粗的标题</strong>
-    </template>
-    <template v-slot:content>
-      <p>细草微风岸，危樯独夜舟。</p>
-      <p>星垂平野阔，月涌大江流。</p>
-      <p>名岂文章著，官应老病休。</p>
-      <p>飘飘何所似，天地一沙鸥。</p>
-    </template>
-  </Dialog>
-
-  <h3>示例二</h3>
-  <Button @click="showDialog">Show Dialog</Button>
-
+  <div>
+    <Layout main-heading="Dialog 对话框"
+            main-description="Classic modal overlay which represents a dialog box"
+            sub-heading="示例">
+      <Demo :component="Dialog1Demo"
+            description="<Dialog>, by default, has the OK and Cancel buttons
+            in the footer. You can provide a custom message and title
+            with the message and title props respectively."/>
+      <Demo :component="Dialog2Demo"
+            description="<Dialog> supports close on overlay click (disabled by default).
+            This feature may be enabled by setting the prop closeOnClickOverlay."/>
+    </Layout>
+  </div>
 </template>
 
 <script>
-import Dialog from '../lib/Dialog.vue';
-import Button from '../lib/Button.vue';
-import {ref} from 'vue';
-import {openDialog} from '../lib/openDialog';
+import Layout from './Layout.vue';
+import Demo from './Demo.vue';
+import Dialog1Demo from './code/Dialog1.demo.vue';
+import Dialog2Demo from './code/Dialog2.demo.vue';
 
 export default {
-  components: {Button, Dialog},
+  components: {Layout, Demo},
   setup() {
-    const showDialog = () => {
-      openDialog({
-        visible: false,
-        closeOnClickOverlay: false,
-        title: "提示",
-        content: "内容很长很长很长很长",
-        ok() {
-          console.log('ok2');
-        },
-        cancel() {
-          console.log('cancel2');
-        },
-      })
-    }
-    const bool = ref(false);
-    const toggle = () => {
-      bool.value = !bool.value;
-    };
-    const f1 = () => {
-      console.log('cancel');
-    };
-    const f2 = () => {
-      console.log('ok');
-    };
-    return {toggle, bool, f1, f2, showDialog};
+    return {Dialog1Demo, Dialog2Demo};
   }
 };
 </script>

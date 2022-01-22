@@ -50,6 +50,7 @@ export default {
 $border: #373737;
 $theme: #c1b3a6;
 $warning: #ffb624;
+$light: #b7a697;
 $link: #333;
 $disabled: grey;
 $default: #373737;
@@ -68,7 +69,7 @@ $radius: 4px;
   align-items: center;
   white-space: nowrap;
   background: $default;
-  color: white;
+  color: $theme;
   border: 1px solid $border;
   border-radius: $radius;
   box-shadow: $box-shadow;
@@ -77,6 +78,7 @@ $radius: 4px;
 
   & + & {
     margin-left: 8px;
+    margin-bottom: 8px;
   }
 
   &:hover, &:focus {
@@ -99,7 +101,18 @@ $radius: 4px;
     color: $link;
 
     &:hover, &:focus {
-      background: darken($theme, 5%);
+      background: darken(white, 10%);
+    }
+  }
+
+  &.hugsy-theme-light {
+    background: $light;
+    border-color: $light;
+    color: inherit;
+
+    &:hover, &:focus {
+      background: darken($light, 10%);
+      border-color: darken($light, 10%);
     }
   }
 
@@ -222,7 +235,7 @@ $radius: 4px;
     display: inline-block;
     margin-right: 4px;
     border-radius: 8px;
-    border-color: white white white transparent;
+    border-color: $theme $theme $theme transparent;
     border-style: solid;
     border-width: 2px;
     animation: hugsy-spin 1s infinite linear;
