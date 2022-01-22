@@ -121,9 +121,16 @@ $radius: 4px;
     background: transparent;
     box-shadow: none;
     color: inherit;
+    position: relative;
 
-    &:hover, &:focus {
-      border-bottom: 2px solid $default;
+    &:hover::after, &:focus::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: $border;
     }
   }
 
@@ -194,7 +201,9 @@ $radius: 4px;
       &:hover,
       &:focus {
         color: darken($warning, 10%);
-        border-bottom: 2px solid darken($warning, 10%);
+        &::after {
+          background: darken($warning, 10%);
+        }
       }
     }
 
@@ -205,7 +214,9 @@ $radius: 4px;
       &:hover,
       &:focus {
         color: darken($danger, 10%);
-        border-bottom: 2px solid darken($danger, 10%);
+        &::after {
+          background: darken($danger, 10%);
+        }
       }
     }
   }
