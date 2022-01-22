@@ -1,97 +1,36 @@
 <template>
-
-  <h2>Button 按钮</h2>
-
-  <section>
-    <h3>样式</h3>
-    <div class="wrapper">
-      <Button @click="onClick">Click Button</Button>
-      <Button>Default Button</Button>
-      <Button theme="dashed">Dashed Button</Button>
-      <Button theme="text">Text Button</Button>
-      <Button theme="link">Link Button</Button>
-    </div>
-  </section>
-
-  <section>
-    <h3>尺寸</h3>
-    <div class="wrapper">
-      <Button size="large">Large</Button>
-      <Button>Default</Button>
-      <Button size="small">Small</Button>
-    </div>
-  </section>
-
-
-  <section>
-    <h3>程度</h3>
-    <div class="wrapper">
-      <Button level="primary">Primary</Button>
-      <Button>Default</Button>
-      <Button level="danger">Danger</Button>
-      <Button level="primary" theme="text"> Primary Text</Button>
-      <Button level="danger" theme="text">Danger Text</Button>
-      <Button level="danger" theme="link">Danger Link</Button>
-    </div>
-  </section>
-
-  <section>
-    <h3>禁用</h3>
-    <div class="wrapper">
-      <Button disabled>Disabled</Button>
-      <Button disabled theme="link">Disabled Link</Button>
-      <Button disabled theme="text">Disabled Text</Button>
-    </div>
-  </section>
-
-  <section>
-    <h3>加载中</h3>
-    <div class="wrapper">
-      <Button loading level="primary">Loading</Button>
-      <Button loading>Loading</Button>
-    </div>
-  </section>
-
+  <div>
+    <Layout main-heading="Button 按钮"
+            main-description="This Button component replaces the standard HTML button.
+            It offers multiple built-in styles and allows a user to change status and size manually."
+            sub-heading="示例">
+      <Demo :component="Button1Demo"
+            description="We have 3 styles available: outlined, flat and square."/>
+      <Demo :component="Button2Demo"
+            description="The size prop is used to fit your button to any place on your web page."/>
+      <Demo :component="Button3Demo"
+            description="It’s used to apply a gradient style to a background."/>
+      <Demo :component="Button4Demo"
+            description="The disabled prop prevent any actions with button."/>
+      <Demo :component="Button5Demo"
+            description="You can add loading state to the button"/>
+    </Layout>
+  </div>
 </template>
 
 <script>
-import Button from '../lib/Button.vue';
+import Layout from './Layout.vue';
+import Demo from './Demo.vue';
+import Button1Demo from './code/Button1.demo.vue';
+import Button2Demo from './code/Button2.demo.vue';
+import Button3Demo from './code/Button3.demo.vue';
+import Button4Demo from './code/Button4.demo.vue';
+import Button5Demo from './code/Button5.demo.vue';
 
 export default {
-  components: {Button},
+  components: {Layout, Demo},
   setup() {
-    const onClick = () => {
-      console.log('hi');
-    };
-    return {onClick};
+    return {Button1Demo, Button2Demo, Button3Demo, Button4Demo, Button5Demo};
   }
 };
 </script>
-
-<style lang="scss" scoped>
-$border: #eee;
-h2 {
-  margin-bottom: 24px;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-
-  > h3 {
-    margin: 8px 0 16px 0;
-  }
-
-  > .wrapper {
-    border: 1px solid $border;
-    border-radius: 4px;
-    padding: 24px;
-    margin-right: 25%;
-    transition: all .2s ease-in-out;
-
-    &:hover {
-      border-color: darken($border, 10%);
-    }
-  }
-}
-</style>

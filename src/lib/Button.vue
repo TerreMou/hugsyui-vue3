@@ -47,14 +47,13 @@ export default {
 </script>
 
 <style lang="scss">
-$border: #d9d9d9;
+$border: #373737;
 $theme: #c1b3a6;
-$primary: #373737;
+$warning: #ffb624;
 $link: #333;
-$red: #f65658;
 $disabled: grey;
-$default: white;
-$danger: red;
+$default: #373737;
+$danger: #f65658;
 $box-shadow: 0 1px 0 fade-out(black, 0.95);
 $h: 32px;
 $radius: 4px;
@@ -69,7 +68,7 @@ $radius: 4px;
   align-items: center;
   white-space: nowrap;
   background: $default;
-  color: #333;
+  color: white;
   border: 1px solid $border;
   border-radius: $radius;
   box-shadow: $box-shadow;
@@ -81,8 +80,8 @@ $radius: 4px;
   }
 
   &:hover, &:focus {
-    color: $theme;
-    border-color: $theme;
+    background: darken($default, 10%);
+    border-color: darken($default, 10%);
   }
 
   &:focus {
@@ -111,12 +110,18 @@ $radius: 4px;
     color: inherit;
 
     &:hover, &:focus {
-      border-bottom: 2px solid $red;
+      border-bottom: 2px solid $default;
     }
   }
 
-  &.hugsy-theme-dashed {
-    border-style: dashed;
+  &.hugsy-theme-outlined {
+    border: 2px solid;
+    background: white;
+    color: $default;
+
+    &:hover, &:focus {
+      background: darken(white, 10%);
+    }
   }
 
   &.hugsy-size-large {
@@ -131,23 +136,23 @@ $radius: 4px;
     padding: 0 4px;
   }
 
-  &.hugsy-theme-default, &.hugsy-theme-dashed {
-    &.hugsy-level-primary {
-      background: $primary;
+  &.hugsy-theme-default {
+    &.hugsy-level-warning {
+      background: $warning;
       color: white;
-      border-color: $primary;
+      border-color: $warning;
 
       &:hover,
       &:focus {
-        background: darken($primary, 15%);
-        border-color: darken($primary, 15%);
+        background: darken($warning, 10%);
+        border-color: darken($warning, 10%);
       }
     }
 
     &.hugsy-level-danger {
       background: $danger;
       border-color: $danger;
-      color: #333;
+      color: white;
 
       &:hover,
       &:focus {
@@ -169,18 +174,20 @@ $radius: 4px;
   }
 
   &.hugsy-theme-text {
-    &.hugsy-level-primary {
-      color: $primary;
+    &.hugsy-level-warning {
+      color: $warning;
       font-weight: bold;
 
       &:hover,
       &:focus {
-        color: darken($primary, 15%);
+        color: darken($warning, 10%);
+        border-bottom: 2px solid darken($warning, 10%);
       }
     }
 
     &.hugsy-level-danger {
       color: $danger;
+      font-weight: bold;
 
       &:hover,
       &:focus {
@@ -215,16 +222,10 @@ $radius: 4px;
     display: inline-block;
     margin-right: 4px;
     border-radius: 8px;
-    border-color: $primary $primary $primary transparent;
+    border-color: white white white transparent;
     border-style: solid;
     border-width: 2px;
     animation: hugsy-spin 1s infinite linear;
-  }
-
-  &.hugsy-level-primary {
-    > .hugsy-loadingIndicator {
-      border-color: white white white transparent;
-    }
   }
 
 }
