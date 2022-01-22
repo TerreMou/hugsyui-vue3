@@ -86,6 +86,7 @@ $selected: #f65658;
   display: flex;
 
   > aside {
+    z-index: 10;
     flex-shrink: 0;
     background: $color-aside;
     width: 150px;
