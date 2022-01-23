@@ -1,12 +1,12 @@
 <template>
   <div>
     <Layout main-heading="Switch 开关"
-            main-description="Switch component turns on or off the state of your custom option"
+            main-description="用于切换开启状态/关闭状态。"
             sub-heading="示例">
       <Demo :component="Switch1Demo"
-            description="This is basic usage of switch component."/>
+            description="Switch 组件的基本用法。"/>
       <Demo :component="Switch2Demo"
-            description="Switch can be in disabled state."/>
+            description="Switch 组件可以被设置为不可用状态。"/>
     </Layout>
   </div>
 </template>

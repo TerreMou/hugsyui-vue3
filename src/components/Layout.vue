@@ -27,6 +27,7 @@ header {
   padding: 16px 16px;
 
   h1 {
+    padding-bottom: 16px;
     font-size: 36px;
     font-weight: 600;
   }

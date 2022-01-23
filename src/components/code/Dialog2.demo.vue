@@ -1,7 +1,7 @@
 <demo>一键打开 Dialog</demo>
 <template>
   <div>
-    <Button @click="showDialog">Show Dialog</Button>
+    <Button @click="showDialog">Show dialog</Button>
   </div>
 </template>
 
@@ -17,8 +17,8 @@ export default {
       openDialog({
         visible: false,
         closeOnClickOverlay: true,
-        title: h('strong', {}, 'Overview'),
-        content: '内容很长很长很长很长',
+        title: h('strong', {}, '这里是标题'),
+        content: '这里是很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的内容',
         ok() {
           console.log('ok');
         },

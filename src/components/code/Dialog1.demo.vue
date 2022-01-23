@@ -2,16 +2,19 @@
 <template>
   <div>
     <Button @click="toggle">Show dialog</Button>
-    <Dialog v-model:visible="bool" :closeOnClickOverlay="false"
+    <Dialog v-model:visible="bool" :closeOnClickOverlay="true"
             :cancel="f1" :ok="f2">
       <template v-slot:title>
-        <strong>加粗的标题</strong>
+        <strong>Overview</strong>
       </template>
       <template v-slot:content>
-        <p>细草微风岸，危樯独夜舟。</p>
-        <p>星垂平野阔，月涌大江流。</p>
-        <p>名岂文章著，官应老病休。</p>
-        <p>飘飘何所似，天地一沙鸥。</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Alias animi aspernatur atque blanditiis,
+          consequatur corporis deleniti exercitationem expedita facilis
+          fugit inventore laborum nam nobis odit,
+          quae quas repudiandae vitae voluptates.
+        </p>
       </template>
     </Dialog>
   </div>

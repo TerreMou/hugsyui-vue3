@@ -1,4 +1,4 @@
-<demo>默认</demo>
+<demo>基本</demo>
 
 <template>
   <Switch v-model:checkedValue="bool"/>
@@ -11,7 +11,7 @@ import {ref} from "vue";
 export default {
   components: {Switch},
   setup() {
-    const bool = ref(false);
+    const bool = ref(true);
     return {bool};
   }
 };

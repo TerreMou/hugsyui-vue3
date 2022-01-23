@@ -1,4 +1,4 @@
-<demo>默认</demo>
+<demo>基本</demo>
 <template>
   <Tabs v-model:selected="tab">
     <Tab title="Tab One">This is Content One</Tab>

@@ -31,6 +31,12 @@ $h2: $h - 4px;
   border-radius: $h / 2;
   position: relative;
 
+  & + & {
+    margin-left: 12px;
+    margin-bottom: 8px;
+  }
+
+
   > span {
     background: white;
     height: $h2;
@@ -43,12 +49,23 @@ $h2: $h - 4px;
     transition: all 250ms;
   }
 
+  &[disabled] {
+    cursor: not-allowed;
+    background: lighten($color-off, 10%);
+  }
+
   &.hugsy-checked {
     background: $color-on;
 
     > span {
       left: calc(100% - #{$h2} - 2px)
     }
+
+    &[disabled] {
+      cursor: not-allowed;
+      background: lighten($color-on, 40%);
+    }
+
   }
 
   &:focus {
@@ -63,10 +80,6 @@ $h2: $h - 4px;
 
   &.hugsy-checked:active {
     > span {width: $h2 + 4px; margin-left: -4px;}
-  }
-
-  &[disabled] {
-   cursor: not-allowed;
   }
 
 }

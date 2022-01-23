@@ -1,19 +1,18 @@
 <template>
   <div>
     <Layout main-heading="Button 按钮"
-            main-description="This Button component replaces the standard HTML button.
-            It offers multiple built-in styles and allows a user to change status and size manually."
+            main-description="Button 组件提供多种内置样式，并且可以手动更改状态和大小。"
             sub-heading="示例">
       <Demo :component="Button1Demo"
-            description="We have 3 styles available: outlined, flat and square."/>
+            description="有 5 种样式可以选择：默认方形、圆角、轮廓、链接和文字。"/>
       <Demo :component="Button2Demo"
-            description="The size prop is used to fit your button to any place on your web page."/>
+            description="按钮有小、中、大三种尺寸，默认尺寸为中。"/>
       <Demo :component="Button3Demo"
-            description="It’s used to apply a gradient style to a background."/>
+            description="内置有普通、警告、危险三个重要性梯度。"/>
       <Demo :component="Button4Demo"
-            description="The disabled prop prevent any actions with button."/>
+            description="添加 disabled 属性便可让按钮处于不可用状态。"/>
       <Demo :component="Button5Demo"
-            description="You can add loading state to the button"/>
+            description="添加 loading 属性便可让按钮处于加载状态。"/>
     </Layout>
   </div>
 </template>

@@ -1,15 +1,13 @@
 <template>
   <div>
     <Layout main-heading="Dialog 对话框"
-            main-description="Classic modal overlay which represents a dialog box"
+            main-description="在当前页面正中打开一个浮层对话框，可以设置是否能够点击遮罩层关闭。"
             sub-heading="示例">
       <Demo :component="Dialog1Demo"
-            description="<Dialog>, by default, has the OK and Cancel buttons
-            in the footer. You can provide a custom message and title
-            with the message and title props respectively."/>
+            description="基础对话框，含有确认和取消按钮，支持点击遮罩层关闭对话框：
+            设置 closeOnClickOverlay 属性为 true 即可。"/>
       <Demo :component="Dialog2Demo"
-            description="<Dialog> supports close on overlay click (disabled by default).
-            This feature may be enabled by setting the prop closeOnClickOverlay."/>
+            description="可调用内置的 openDialog 函数，一键调用 Dialog 对话框。"/>
     </Layout>
   </div>
 </template>

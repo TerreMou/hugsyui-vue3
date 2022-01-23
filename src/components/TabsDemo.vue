@@ -1,13 +1,10 @@
 <template>
   <div>
     <Layout main-heading="Tabs 标签页"
-            main-description="This component can be used as an on-page navigation
-            offering with a rich variety of visual customizations and
-            usage flexibility."
+            main-description="最常用的选项卡切换组件，可作为页面导航。"
             sub-heading="示例">
       <Demo :component="Tabs1Demo"
-            description="By default it’s displayed as a horizontal list
-            of tab items"/>
+            description="默认为水平列表选项卡。"/>
     </Layout>
   </div>
 </template>
