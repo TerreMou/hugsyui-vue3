@@ -73,10 +73,10 @@ export default {
 </script>
 
 <style lang="scss">
-$selected: #373737;
-$color: #373737;
-$line: #373737;
-$border-color: #c1b3a6;
+$selected: #00dc82;
+$color: #00312d;
+$line: #00dc82;
+$border-color: #c8d8d8;
 
 .hugsy-tabs {
 

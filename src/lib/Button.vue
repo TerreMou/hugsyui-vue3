@@ -47,14 +47,13 @@ export default {
 </script>
 
 <style lang="scss">
-$border: #373737;
-$theme: #c1b3a6;
+$border: #e5eef0;
+$theme: #fff;
 $warning: #ffb624;
-$light: #b7a697;
-$link: #333;
-$disabled: grey;
-$default: #373737;
-$danger: #f65658;
+$link: #00dc82;
+$disabled: #b4c4c3;
+$default: #00dc82;
+$danger: #f36948;
 $box-shadow: 0 1px 0 fade-out(black, 0.95);
 $h: 32px;
 $radius: 4px;
@@ -62,7 +61,7 @@ $radius: 4px;
 .hugsy-button {
   box-sizing: border-box;
   height: $h;
-  padding: 0 12px;
+  padding: 8px 16px;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -105,15 +104,8 @@ $radius: 4px;
     }
   }
 
-  &.hugsy-theme-light {
-    background: $light;
-    border-color: $light;
-    color: inherit;
-
-    &:hover, &:focus {
-      background: darken($light, 10%);
-      border-color: darken($light, 10%);
-    }
+  &.hugsy-theme-oval {
+   border-radius: 1.5rem;
   }
 
   &.hugsy-theme-text {
@@ -130,30 +122,31 @@ $radius: 4px;
       bottom: 0;
       width: 100%;
       height: 2px;
-      background: $border;
+      background: $default;
     }
   }
 
   &.hugsy-theme-outlined {
-    border: 2px solid;
-    background: white;
+    border: 2px solid $default;
+    border-radius: 1.5rem;
+    background: transparent;
     color: $default;
 
     &:hover, &:focus {
-      background: darken(white, 10%);
+      background: lighten($default, 50%);
     }
   }
 
   &.hugsy-size-large {
     font-size: 20px;
     height: 40px;
-    padding: 0 16px;
+    padding: 8px 16px;
   }
 
   &.hugsy-size-small {
     font-size: 12px;
     height: 24px;
-    padding: 0 4px;
+    padding: 8px 16px;
   }
 
   &.hugsy-theme-default {
@@ -201,6 +194,7 @@ $radius: 4px;
       &:hover,
       &:focus {
         color: darken($warning, 10%);
+
         &::after {
           background: darken($warning, 10%);
         }
@@ -214,6 +208,7 @@ $radius: 4px;
       &:hover,
       &:focus {
         color: darken($danger, 10%);
+
         &::after {
           background: darken($danger, 10%);
         }
@@ -228,6 +223,7 @@ $radius: 4px;
 
       &:hover {
         border-color: $disabled;
+
       }
     }
   }
@@ -236,7 +232,10 @@ $radius: 4px;
     &[disabled] {
       cursor: not-allowed;
       color: $disabled;
-      border: none;
+
+      &:hover::after, &:focus::after {
+        content: none
+      }
     }
   }
 

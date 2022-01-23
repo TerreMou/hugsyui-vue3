@@ -19,8 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
-$color-on: #373737;
-$color-off: grey;
+$color-on: #00dc82;
+$color-off: #b4c4c3;
 $h: 22px;
 $h2: $h - 4px;
 .hugsy-switch {

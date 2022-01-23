@@ -20,7 +20,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$color: #003c3c;
+
 header {
+  color: $color;
   padding: 16px 16px;
 
   h1 {
@@ -30,6 +33,7 @@ header {
 }
 section {
   h2 {
+    color: $color;
     font-size: 28px;
     font-weight: 600;
     padding: 16px 16px 0 16px;

@@ -2,7 +2,7 @@
 <template>
   <div>
     <Button>Button</Button>
-    <Button theme="light">Light</Button>
+    <Button theme="oval">Oval</Button>
     <Button theme="outlined">Outline</Button>
     <Button theme="link">Link</Button>
     <Button theme="text">Text</Button>

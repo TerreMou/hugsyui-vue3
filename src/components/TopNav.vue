@@ -42,8 +42,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #c1b3a6;
-$bg: #373737;
+$color: #00e080;
+$bg: #003c3c;
 .topnav {
   color: $color;
   background: $bg;

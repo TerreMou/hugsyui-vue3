@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$border-color: #373737;
+$border-color: #c8d8d8;
 
 .demo {
   margin: 16px 0 32px;

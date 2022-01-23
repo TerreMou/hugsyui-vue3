@@ -53,10 +53,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color-aside: #373737;
-$color-main: #c1b3a6;
-$font-color: #c1b3a6;
-$selected: #f65658;
+$color-aside: #e5eef0;
+$color-main: white;
+$font-color: #00312d;
+$selected: #00e080;
+$selected-bg: lighten($selected, 50%);
 
 .layout {
   display: flex;
@@ -65,17 +66,12 @@ $selected: #f65658;
 
   > .nav {
     flex-shrink: 0;
-    background: none;
-    color: #2a282a;
-    @media (max-width: 500px) {
-      background: #373737;
-    }
   }
 
   > .content {
     flex-grow: 1;
     padding-top: 60px;
-    padding-left: 156px;
+    padding-left: 256px;
     @media (max-width: 500px) {
       padding-left: 0;
     }
@@ -89,16 +85,18 @@ $selected: #f65658;
     z-index: 10;
     flex-shrink: 0;
     background: $color-aside;
-    width: 150px;
+    width: 250px;
     position: fixed;
     top: 0;
     left: 0;
-    padding-top: 70px;
+    padding-top: 100px;
     height: 100%;
     color: $font-color;
 
     > h2 {
-      padding: 0 16px;
+      padding: 0 16px 4px 32px;
+      font-size: 14px;
+      color: #003633;
     }
 
     > ol {
@@ -107,21 +105,16 @@ $selected: #f65658;
       > li {
         a {
           display: block;
-          padding: 8px 20px;
+          padding: 8px 16px 8px 48px;
           position: relative;
 
-          &:hover::after {
-            content: "";
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: $selected;
+          &:hover {
+            background-color: $selected-bg;
           }
         }
 
         .router-link-active {
+          background-color: $selected-bg;
 
           &::after {
             content: "";
@@ -145,4 +138,27 @@ $selected: #f65658;
     background: $color-main;
   }
 }
+
+@media(max-width: 500px) {
+  .content {
+    padding-left: 0;
+
+    > aside {
+      width: 150px;
+
+      > h2 {
+        padding: 0 16px;
+      }
+
+      > ol {
+        > li {
+          a {
+            padding: 8px 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
 </style>

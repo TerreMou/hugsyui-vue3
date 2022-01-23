@@ -14,7 +14,7 @@
           </main>
           <footer>
             <Button theme="link" @click="onCancel">取消</Button>
-            <Button theme="light" @click="onOk">确认</Button>
+            <Button @click="onOk">确认</Button>
           </footer>
         </div>
       </div>
