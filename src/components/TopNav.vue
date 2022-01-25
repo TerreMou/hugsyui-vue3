@@ -7,7 +7,7 @@
     </router-link>
     <ul class="menu">
       <li>
-        <a href="#">GitHub</a>
+        <a href="https://github.com/TerreMou/hugsyui-vue3">GitHub</a>
       </li>
     </ul>
 
