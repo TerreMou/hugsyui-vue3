@@ -1,12 +1,13 @@
 <template>
   <div class="demo">
     <h3>{{ component.__sourceCodeTitle }}</h3>
-    <p class="description">{{description}}</p>
+    <p class="description">{{ description }}</p>
     <div class="demo-component">
       <component :is="component"/>
     </div>
     <div class="demo-actions">
-      <Button size="small" theme="link" @click="codeVisible=!codeVisible">查看代码</Button>
+      <Button size="small" theme="link" @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button size="small" theme="link" @click="showCode" v-else>查看代码</Button>
     </div>
     <div class="demo-code" v-if="codeVisible">
       <pre class="language-html" v-html="rawCode"/>
@@ -31,7 +32,14 @@ export default {
     const rawCode = computed(() => {
       return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html');
     });
-    return {Prism, codeVisible, rawCode};
+    const hideCode = () => {
+      codeVisible.value = false;
+    };
+    const showCode = () => {
+      codeVisible.value = true;
+    };
+
+    return {Prism, codeVisible, rawCode, hideCode, showCode};
   }
 };
 </script>
