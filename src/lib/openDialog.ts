@@ -7,6 +7,7 @@ const openDialog = (options) => {
   const div = document.createElement("div");
   document.body.appendChild(div);
   const close = () => {
+    // @ts-ignore
     dialogApp.unmount(div);
     div.remove();
   };
