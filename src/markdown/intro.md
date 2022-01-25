@@ -7,7 +7,7 @@ Hugsy 这个名字来自于我最喜欢的美剧《老友记》中 Joey 最爱�
 
 **所以强烈不建议你将这个库用于生产环境。**
 
-源代码放在了[这里](https://github.com/TerreMou/hugsyui-vue3) ， 运行方法见 README.md。
+源代码放在了[这里](https://github.com/TerreMou/hugsyui-vue3) 。
       
 历史提交信息记录了我做这个项目踏出的每一步，你可以按 commit 的顺序逐个查看。当然你也可以直接看每个组件的源代码和示例~
 

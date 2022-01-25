@@ -5,7 +5,7 @@
 然后在你的代码中写入下面的代码：
 
 ```js
-import {Switch, Button, Dialog, Tabs} from "hugsy-ui"
+import {Switch, Button, Dialog,openDialog, Tabs, Tab} from "hugsy-ui-1"
 ```
 
 就可以使用 Hugsy UI 提供的组件了。
@@ -19,7 +19,7 @@ import {Switch, Button, Dialog, Tabs} from "hugsy-ui"
   <div><Button>按钮</Button></div>
 </template>
 <script>
-  import {Switch, Button, Dialog, Tabs} from "hugsy-ui"
+import {Switch, Button, Dialog,openDialog, Tabs, Tab} from "hugsy-ui-1"
   export default {
     components: {Button}
   }
